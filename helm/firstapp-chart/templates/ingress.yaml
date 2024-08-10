@@ -1,0 +1,21 @@
+# Ingress resource for the application
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: firstapp
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: af7ec174db11a493e9d05e47a349e5cf-df28cd96e039e2d3.elb.ap-south-1.amazonaws.com
+    http:
+      paths: 
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: firstapp
+            port:
+              number: 80
+
