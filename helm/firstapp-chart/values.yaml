@@ -8,7 +8,7 @@ image:
   repository: ubaidullah244/first-go-app
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "10332690996"
+  tag: "10346511834"
 
 app:
   name: "firstapp"
