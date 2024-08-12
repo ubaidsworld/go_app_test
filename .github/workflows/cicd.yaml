@@ -59,7 +59,7 @@ jobs:
     - name: Login to DockerHub
       uses: docker/login-action@v3
       with:
-        username: ubaidullah244 #${{ secrets.DOCKERHUB_USERNAME }}
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: dckr_pat_dzPhkfpcBD_0e0Ty-6k4Xq38vdU #${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: Build and Push action
@@ -68,7 +68,7 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/go-web-app:${{github.run_id}}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/firstapp:${{github.run_id}}
 
   update-newtag-in-helm-chart:
     runs-on: ubuntu-latest
