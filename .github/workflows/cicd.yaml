@@ -68,7 +68,7 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/firstapp:${{github.run_id}}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/first-go-app:${{github.run_id}}
 
   update-newtag-in-helm-chart:
     runs-on: ubuntu-latest
